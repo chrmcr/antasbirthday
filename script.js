@@ -1780,39 +1780,92 @@ if (giftBtn) {
 
 }
 
-
 /* =========================================================
    MUSIC
 ========================================================= */
 
 const musicBtn =
-  document.getElementById(
-    "musicBtn"
-  );
-
+  document.getElementById("musicBtn");
 
 const bgMusic =
-  document.getElementById(
-    "bgMusic"
-  );
+  document.getElementById("bgMusic");
+
+let musicPlaying = false;
 
 
-let musicPlaying =
-  false;
+/* =========================
+   TRY AUTOPLAY
+========================= */
+
+async function startBackgroundMusic() {
+
+  if (!bgMusic || musicPlaying) {
+    return;
+  }
+
+  try {
+
+    await bgMusic.play();
+
+    musicPlaying = true;
+
+    if (musicBtn) {
+      musicBtn.innerText = "❚❚";
+    }
+
+  } catch (error) {
+
+    console.log(
+      "Autoplay diblokir browser. Menunggu interaksi user..."
+    );
+
+  }
+
+}
 
 
-if (
-  musicBtn &&
-  bgMusic
-) {
+/* =========================
+   START MUSIC AFTER FIRST CLICK
+========================= */
+
+document.addEventListener(
+  "click",
+  () => {
+
+    if (!musicPlaying) {
+      startBackgroundMusic();
+    }
+
+  },
+  { once: true }
+);
+
+
+/* =========================
+   TRY AUTOPLAY WHEN PAGE LOADS
+========================= */
+
+window.addEventListener(
+  "load",
+  () => {
+
+    startBackgroundMusic();
+
+  }
+);
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+if (musicBtn && bgMusic) {
 
   musicBtn.addEventListener(
     "click",
     async () => {
 
-      /* =========================
-         SOUND BUTTON
-      ========================= */
+      /* SOUND BUTTON */
 
       playSound(
         "click.mp3",
@@ -1828,14 +1881,9 @@ if (
 
         bgMusic.pause();
 
+        musicPlaying = false;
 
-        musicPlaying =
-          false;
-
-
-        musicBtn.innerText =
-          "♫";
-
+        musicBtn.innerText = "♫";
 
       }
 
@@ -1850,14 +1898,9 @@ if (
 
           await bgMusic.play();
 
+          musicPlaying = true;
 
-          musicPlaying =
-            true;
-
-
-          musicBtn.innerText =
-            "❚❚";
-
+          musicBtn.innerText = "❚❚";
 
         }
 
