@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Little Birthday Surprise ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <span id="progressBar"></span>
+  </div>
+
+
+  <!-- MUSIC -->
+  <button class="music-btn" id="musicBtn">
+    ♫
+  </button>
+
+  <audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <main>
+
+    <!-- =========================
+         SCENE 1
+    ========================== -->
+
+    <section class="scene active" id="scene1">
+
+      <div class="stars">
+        <span>🎁</span>
+        <span>🎈</span>
+        <span>🎉</span>
+        <span>✨</span>
+        <span>🎂</span>
+        <span>🎊</span>
+      </div>
+
+
+      <div class="copy intro-copy">
+
+        <p class="tiny">
+          pssst...
+        </p>
+
+        <h1>
+          i have a little<br>
+          surprise for you
+        </h1>
+
+        <p>
+          wanna see it?
+        </p>
+
+
+        <!-- BUNNY -->
+        <div class="bunny-container">
+
+          <img
+            id="bunny"
+            src="stickers/ava1.png"
+            class="bunny"
+            alt="cute bunny"
+          >
+
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="choice-row">
+
+        <button
+            class="pill primary"
+            id="yesBtn"
+            data-next="2">
+            yes!!
+        </button>
+
+        <button
+            class="pill"
+            id="noBtn">
+            no thanks.
+        </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         SCENE 2
+    ========================== -->
+
+    <section class="scene" id="scene2">
+
+      <div class="copy">
+
+        <p class="tiny">
+          today is kinda special...
+        </p>
+
+        <h1>
+          because someone<br>
+          very special was born ♡
+        </h1>
+
+        <div class="name-card">
+          ANTAAA!!
+        </div>
+
+        <p class="sub">
+          happy birthday to my sweet and kind friend~!!
+        </p>
+
+        <button
+          class="text-btn"
+          data-next="3">
+          okay, continue →
+        </button>
+
+      </div>
+
+      <span class="sticker s5">★</span>
+      <span class="sticker s6">✦</span>
+      <span class="sticker s7">♡</span>
+
+    </section>
+
+    <!-- =========================
+         SCENE 3
+    ========================== -->
+
+    <section class="scene" id="scene3">
+
+      <div class="copy top-copy">
+
+        <p class="tiny">
+          a tiny memory dump
+        </p>
+
+        <h1>
+          look at us 
+        </h1>
+
+        <p>
+          tap the photos!
+        </p>
+
+      </div>
+
+
+      <div class="polaroids">
+
+        <button
+          class="polaroid p1"
+          data-caption="Wow...ga kerasa ya hari ini kamu ultah.">
+
+          <img
+            src="photos/memory1.png"
+            alt="Memory 1"
+          >
+
+          <small>
+            memory 01
+          </small>
+
+        </button>
+
+
+        <button
+          class="polaroid p2"
+          data-caption="Selamat bertambah usia anta, semoga umur yg bertambah bikin makin bahagia, sehat selalu, dimudahkan segala urusannya, dan dilancarkan rezekinya.">
+
+          <img
+            src="photos/memory2.png"
+            alt="Memory 2"
+          >
+
+          <small>
+            memory 02
+          </small>
+
+        </button>
+
+
+        <button
+          class="polaroid p3"
+          data-caption="Tetap jadi diri sendiri yg luar biasa yaa.">
+
+          <img
+            src="photos/memory3.png"
+            alt="Memory 3"
+          >
+
+          <small>
+            memory 03
+          </small>
+
+        </button>
+
+        <button
+          class="polaroid p4"
+          data-caption="You deserve every good thing that comes your way.">
+
+          <img
+            src="photos/memory4.png"
+            alt="Memory 4"
+          >
+
+          <small>
+            memory 04
+          </small>
+
+        </button>
+
+        <button
+        class="polaroid p5"
+        data-caption="Thanks for being a part of my life, bestie.">
+
+        <img
+          src="photos/memory5.png"
+          alt="Memory 5"
+        >
+
+        <small>
+          memory 05
+        </small>
+
+      </button>
+
+      </div>
+
+      <p
+        class="photo-hint"
+        id="photoHint">
+        tap all 5 ♡
+      </p>
+
+
+      <button
+        class="text-btn hidden"
+        id="memoryNext"
+        data-next="4">
+
+        i'm ready →
+
+      </button>
+
+    </section>
+
+    <!-- =========================
+         SCENE 4
+    ========================== -->
+
+    <section class="scene" id="scene4">
+
+      <div class="copy">
+
+        <p class="tiny">
+          things they wanna say...
+        </p>
+
+        <h1>
+          open these ♡
+        </h1>
+
+
+        <div class="notes">
+
+          <button
+            class="note"
+            data-message="semoga magelang ada hajatan kamu nya yang di kursi utamanya ama katom - zelpho">
+
+            open me 01 ♡
+
+          </button>
+
+
+          <button
+            class="note"
+            data-message="Hapibesdey tan. Semoga makin bahagia, sehat sllu,dan rezekinya lancar. Umur bolh nmbah, traktiran juga harus nmbh 😭🤣 - qay">
+
+            open me 02 ✦
+
+          </button>
+
+
+          <button
+            class="note"
+            data-message="hbd antaa! semoga hal-hal baik selalu berpihak sm kmuu, sukses terus yaa 💙 - haura">
+
+            open me 03 !!
+
+          </button>
+
+
+          <button
+            class="note"
+            data-message="-">
+
+            open me 04 ˚₊
+
+          </button>
+
+        </div>
+
+
+        <p
+          class="note-count"
+          id="noteCount">
+
+          0 / 4 opened
+
+        </p>
+
+
+        <button
+          class="text-btn hidden"
+          id="notesNext"
+          data-next="5">
+
+          one last thing →
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCENE 5 - LDR
+    ========================== -->
+
+    <section class="scene" id="scene5">
+
+      <div class="copy">
+
+        <p class="tiny">
+          distance really said...
+        </p>
+
+        <h1>
+          let's make this<br>
+          friendship harder 😭
+        </h1>
+
+
+        <div class="distance">
+
+          <div>
+            🏠
+            <small>me</small>
+          </div>
+
+
+          <div class="route">
+
+            <span id="plane">
+              ✈︎
+            </span>
+
+            · · · · · · · · · · ·
+
+          </div>
+
+
+          <div>
+            🏠
+            <small>you</small>
+          </div>
+
+        </div>
+
+
+        <p class="sub">
+          but somehow, here we are 
+        </p>
+
+        <p class="little">
+          and one day we'll celebrate this birthday together.
+        </p>
+
+
+        <button
+          class="text-btn"
+          data-next="5game">
+
+          help Haura deliver it → 🐰
+
+        </button>
+
+      </div>
+
+    </section>
+
+        <!-- =========================
+         SCENE 5.5 - BUNNY DELIVERY GAME
+    ========================== -->
+
+    <section class="scene bunny-game-scene" id="scene5game">
+
+      <div class="copy">
+
+        <p class="tiny">
+          one tiny mission...
+        </p>
+
+        <h1>
+          help Haura<br>
+          deliver the cake 🐰🎂
+        </h1>
+
+        <p class="sub">
+          get the cake safely to the birthday house ♡
+        </p>
+
+      </div>
+
+
+      <!-- GAME AREA -->
+      <div class="bunny-game">
+
+        <!-- clouds -->
+        <div class="game-cloud cloud-one">☁️</div>
+        <div class="game-cloud cloud-two">☁️</div>
+
+        <!-- hearts -->
+        <div class="game-hearts" id="gameHearts">
+          ♡ ♡ ♡
+        </div>
+
+
+        <!-- HOUSE / FINISH -->
+      <div class="birthday-house">
+        <img src="photos/house.png" alt="Birthday House">
+        <span>rumah anta</span>
+      </div>
+
+
+        <!-- GROUND -->
+        <div class="game-ground"></div>
+
+        <!-- OBSTACLES -->
+        <div class="game-obstacle obstacle-1">
+          <img src="photos/character1.png" alt="Character">
+        </div>
+
+        <div class="game-obstacle obstacle-2">
+          <img src="photos/character2.png" alt="Character">
+        </div>
+
+        <div class="game-obstacle obstacle-3">
+          <img src="photos/character3.png" alt="Character">
+        </div>
+
+
+        <!-- BUNNY -->
+        <div
+          class="game-bunny"
+          id="gameBunny"
+        >
+
+          <img
+            src="stickers/ava1.png"
+            alt="Bunny"
+          >
+
+          <div class="cake-carry">
+            🎂
+          </div>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+        <div class="game-controls">
+
+          <button
+            class="game-control"
+            id="moveLeft"
+          >
+            ←
+          </button>
+
+          <button
+            class="game-control"
+            id="moveRight"
+          >
+            →
+          </button>
+
+        </div>
+
+
+        <!-- START TEXT -->
+        <p
+          class="game-instruction"
+          id="gameInstruction"
+        >
+          use ← → to move Bunny
+        </p>
+
+
+        <!-- WIN MESSAGE -->
+        <div
+          class="game-win hidden"
+          id="gameWin"
+        >
+
+          <div class="win-card">
+
+            <div class="win-bunny">
+              🐰🎂
+            </div>
+
+            <p class="tiny">
+              DELIVERY COMPLETE!
+            </p>
+
+            <h2>
+              the cake arrived safely ♡
+            </h2>
+
+            <p>
+              Haura did it!!
+            </p>
+
+            <button
+              class="pill primary"
+              id="gameNext"
+            >
+              open the surprise →
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         SCENE 6 - GIFT
+    ========================== -->
+
+    <section class="scene" id="scene6">
+
+      <div class="copy">
+
+        <p class="tiny">
+          okay... one, two, three!
+        </p>
+
+        <h1>
+          tadaa~ this one is actually<br>
+          for youu
+        </h1>
+
+
+        <div class="gift-stage">
+
+        <button
+          class="gift"
+          id="giftBtn"
+          aria-label="Open birthday gift">
+
+          <span class="gift-shadow"></span>
+
+          <span class="box">
+            <span class="box-shine"></span>
+            <span class="ribbon-v"></span>
+            <span class="ribbon-h"></span>
+          </span>
+
+          <span class="lid">
+            <span class="lid-shine"></span>
+          </span>
+
+          <span class="bow">
+            <span class="bow-loop bow-left"></span>
+            <span class="bow-loop bow-right"></span>
+            <span class="bow-knot"></span>
+          </span>
+
+        </button>
+
+        </div>
+
+
+        <p class="little">
+          tap the gift ♡
+        </p>
+
+      </div>
+
+    </section>
+
+<!-- =========================
+     SCENE 7 - COFFEE & BREAD
+========================= -->
+
+<section class="scene coffee-scene" id="scene7">
+
+  <div class="copy">
+
+    <p class="tiny">
+      one last little thing...
+    </p>
+
+    <h1>
+      your little treat 
+    </h1>
+
+    <p class="sub">
+      since i can't give it to you in person,
+      <br>
+      here's a tiny coffee & bread instead ☕🥐
+    </p>
+
+    <div class="food-card">
+
+      <img
+        src="photos/coffee-bread.png"
+        alt="Coffee and bread"
+      >
+
+    </div>
+
+   <p class="little">
+    jangan lupa diambil di Fore Magelang yaa,
+    <br>
+    pesanan kecil ini udah nungguin kmu
+  </p>
+
+    <div class="food-decor">
+      enjoy your meal~
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- =========================
+       MESSAGE POPUP
+  ========================== -->
+
+  <div
+    class="modal hidden"
+    id="modal">
+
+    <div class="modal-card">
+
+      <button
+        class="close"
+        id="closeModal">
+
+        ×
+
+      </button>
+
+      <p id="modalText"></p>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
