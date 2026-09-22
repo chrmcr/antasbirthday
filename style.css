@@ -2558,3 +2558,617 @@ main {
   }
 
 }
+
+/* =========================================================
+   📱 MOBILE FIX
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* =========================
+     BODY
+  ========================= */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+
+  /* =========================
+     MAIN
+  ========================= */
+
+  main {
+    width: 100%;
+    height: 100dvh;
+  }
+
+
+  /* =========================
+     SCENE
+  ========================= */
+
+  .scene {
+    width: 100%;
+    max-width: 100vw;
+
+    height: 100dvh;
+    min-height: 100dvh;
+
+    padding:
+      55px 16px 25px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* =========================
+     COPY
+  ========================= */
+
+  .copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .copy h1 {
+    font-size: clamp(
+      38px,
+      11vw,
+      52px
+    );
+
+    line-height: 0.98;
+
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .tiny {
+    font-size: 15px;
+  }
+
+
+  .copy > p:not(.tiny) {
+    font-size: 17px;
+  }
+
+
+  .sub {
+    font-size: 16px !important;
+
+    line-height: 1.55;
+
+    max-width: 100%;
+  }
+
+
+  .little {
+    font-size: 14px !important;
+
+    line-height: 1.6;
+
+    max-width: 100%;
+  }
+
+
+  /* =========================
+     BUTTON
+  ========================= */
+
+  .choice-row {
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+
+
+  .pill {
+    min-height: 44px;
+
+    padding:
+      10px 20px;
+  }
+
+
+  /* =========================
+     SCENE 3
+  ========================= */
+
+  #scene3 {
+    height: 100dvh;
+
+    padding:
+      55px 10px 20px;
+
+    overflow-y: auto;
+  }
+
+
+  #scene3 .top-copy {
+    width: 100%;
+
+    margin-bottom: 14px;
+  }
+
+
+  #scene3 .top-copy h1 {
+    font-size: 43px;
+  }
+
+
+  #scene3 .polaroids {
+    width: 100%;
+
+    max-width: 340px;
+
+    gap: 12px 8px;
+  }
+
+
+  #scene3 .polaroid {
+    flex: 0 0 100px;
+
+    width: 100px;
+    height: 135px;
+
+    padding:
+      6px 6px 24px;
+  }
+
+
+  #scene3 .polaroid img {
+    height: 105px;
+  }
+
+
+  #scene3 .polaroid small {
+    font-size: 12px;
+
+    bottom: 3px;
+  }
+
+
+  #scene3 .photo-hint {
+    margin-top: 12px;
+  }
+
+
+  /* =========================
+     NOTES
+  ========================= */
+
+  .notes {
+    width: 100%;
+    max-width: 360px;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin:
+      20px auto 15px;
+  }
+
+
+  .note {
+    padding:
+      16px 12px;
+
+    font-size: 20px;
+  }
+
+
+  /* =========================
+     LDR
+  ========================= */
+
+  .distance {
+    width: 100%;
+
+    gap: 8px;
+
+    margin:
+      25px auto 20px;
+
+    font-size: 42px;
+  }
+
+
+  .route {
+    min-width: 0;
+
+    width: 100%;
+
+    font-size: 20px;
+
+    overflow: hidden;
+  }
+
+
+  /* =========================
+     GAME SCENE
+  ========================= */
+
+  .bunny-game-scene {
+    height: 100dvh;
+
+    min-height: 100dvh;
+
+    padding:
+      48px 8px 12px;
+
+    overflow-y: auto;
+  }
+
+
+  .bunny-game-scene .copy {
+    width: 100%;
+  }
+
+
+  .bunny-game-scene .copy h1 {
+    font-size: 35px;
+
+    line-height: 0.95;
+  }
+
+
+  .bunny-game-scene .copy .sub {
+    font-size: 14px !important;
+
+    line-height: 1.4;
+  }
+
+
+  /* =========================
+     GAME AREA
+  ========================= */
+
+  .bunny-game {
+    width: 94vw;
+    max-width: 500px;
+
+    height: 340px;
+
+    margin:
+      12px auto 0;
+
+    border-radius: 20px;
+  }
+
+
+  /* =========================
+     GAME CHARACTER
+  ========================= */
+
+  .game-bunny {
+    width: 65px;
+    height: 72px;
+
+    bottom: 57px;
+  }
+
+
+  .game-bunny img {
+    width: 58px;
+    height: 58px;
+  }
+
+
+  .game-obstacle {
+    width: 58px;
+    height: 68px;
+
+    bottom: 55px;
+  }
+
+
+  .game-obstacle img {
+    width: 58px;
+    height: 58px;
+  }
+
+
+  /* =========================
+     HOUSE
+  ========================= */
+
+  .birthday-house {
+    right: 14px;
+
+    bottom: 55px;
+
+    width: 55px;
+  }
+
+
+  .birthday-house img {
+    width: 55px;
+  }
+
+
+  /* =========================
+     GAME CONTROLS
+  ========================= */
+
+  .game-controls {
+    bottom: 8px;
+
+    gap: 7px;
+  }
+
+
+  .game-control {
+    width: 50px;
+    height: 40px;
+
+    font-size: 19px;
+  }
+
+
+  .game-control.jump-control {
+    width: 72px;
+
+    font-size: 11px;
+  }
+
+
+  .game-instruction {
+    bottom: 53px;
+
+    max-width: 90%;
+
+    font-size: 9px;
+
+    text-align: center;
+
+    white-space: normal;
+  }
+
+
+  /* =========================
+     WIN CARD
+  ========================= */
+
+  .win-card {
+    width: 88%;
+
+    max-width: 340px;
+
+    padding:
+      24px 16px;
+  }
+
+
+  /* =========================
+     GIFT
+  ========================= */
+
+  .gift-stage {
+    width: 100%;
+
+    max-width: 280px;
+
+    height: 235px;
+
+    margin:
+      10px auto 0;
+  }
+
+
+  .gift {
+    transform:
+      scale(0.82);
+  }
+
+
+  .gift:hover {
+    transform:
+      scale(0.84);
+  }
+
+
+  /* =========================
+     COFFEE & BREAD
+  ========================= */
+
+  .coffee-scene {
+    height: 100dvh;
+
+    min-height: 100dvh;
+
+    padding:
+      55px 16px 25px;
+
+    overflow-y: auto;
+  }
+
+
+  .coffee-scene .copy {
+    width: 100%;
+  }
+
+
+  .coffee-scene h1 {
+    font-size: 42px;
+
+    line-height: 0.95;
+
+    margin-bottom: 12px;
+  }
+
+
+  .coffee-scene .sub {
+    font-size: 15px !important;
+
+    line-height: 1.5;
+
+    margin-bottom: 14px;
+  }
+
+
+  .food-card {
+    width: min(
+      88vw,
+      380px
+    );
+
+    margin:
+      12px auto;
+
+    padding: 8px;
+
+    border-radius: 18px;
+  }
+
+
+  .food-card img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+  }
+
+
+  .coffee-scene .little {
+    margin-top: 16px;
+
+    font-size: 14px !important;
+
+    line-height: 1.55;
+  }
+
+
+  .food-decor {
+    margin-top: 12px;
+
+    font-size: 22px;
+  }
+
+
+  /* =========================
+     MUSIC BUTTON
+  ========================= */
+
+  .music-btn {
+    right: 12px;
+
+    top: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 18px;
+  }
+
+
+  /* =========================
+     MODAL
+  ========================= */
+
+  .modal {
+    padding: 15px;
+  }
+
+
+  .modal-card {
+    width: 92vw;
+
+    max-height: 80dvh;
+
+    overflow-y: auto;
+
+    padding:
+      50px 22px 28px;
+
+    font-size: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   📱 VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .scene {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .copy h1 {
+    font-size: 36px;
+  }
+
+
+  #scene3 .top-copy h1 {
+    font-size: 38px;
+  }
+
+
+  #scene3 .polaroids {
+    max-width: 320px;
+
+    gap: 10px 5px;
+  }
+
+
+  #scene3 .polaroid {
+    flex-basis: 92px;
+
+    width: 92px;
+    height: 125px;
+  }
+
+
+  #scene3 .polaroid img {
+    height: 96px;
+  }
+
+
+  .bunny-game {
+    width: 95vw;
+
+    height: 300px;
+  }
+
+
+  .coffee-scene h1 {
+    font-size: 37px;
+  }
+
+
+  .food-card {
+    width: 90vw;
+  }
+
+
+  .food-card img {
+    max-height: 200px;
+  }
+
+}
