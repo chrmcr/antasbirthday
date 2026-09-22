@@ -1,4 +1,24 @@
 /* =========================================================
+   SOUND EFFECT SYSTEM
+========================================================= */
+
+function playSound(file, volume = 0.5) {
+
+  const sound =
+    new Audio(`sounds/${file}`);
+
+  sound.volume = volume;
+
+  sound.currentTime = 0;
+
+  sound.play().catch(() => {
+    // Browser dapat memblokir audio tertentu
+  });
+
+}
+
+
+/* =========================================================
    SCENE SYSTEM
 ========================================================= */
 
@@ -22,6 +42,7 @@ function goTo(number) {
     document.getElementById(`scene${number}`);
 
   if (!target) {
+
     console.error(
       `Scene ${number} tidak ditemukan!`
     );
@@ -31,7 +52,9 @@ function goTo(number) {
 
 
   scenes.forEach(scene => {
+
     scene.classList.remove("active");
+
   });
 
 
@@ -60,7 +83,9 @@ function goTo(number) {
   if (String(number) === "5game") {
 
     if (typeof resetGame === "function") {
+
       resetGame();
+
     }
 
   }
@@ -76,14 +101,24 @@ document
   .querySelectorAll("[data-next]")
   .forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      const next =
-        button.dataset.next;
+        playSound(
+          "click.mp3",
+          0.45
+        );
 
-      goTo(next);
 
-    });
+        const next =
+          button.dataset.next;
+
+
+        goTo(next);
+
+      }
+    );
 
   });
 
@@ -103,15 +138,22 @@ if (noBtn) {
     () => {
 
       const maxX = 120;
+
       const maxY = 60;
 
 
       const x =
-        Math.random() * maxX * 2 - maxX;
+        Math.random() *
+        maxX *
+        2 -
+        maxX;
 
 
       const y =
-        Math.random() * maxY * 2 - maxY;
+        Math.random() *
+        maxY *
+        2 -
+        maxY;
 
 
       noBtn.style.transform =
@@ -124,6 +166,12 @@ if (noBtn) {
   noBtn.addEventListener(
     "click",
     () => {
+
+      playSound(
+        "pop.mp3",
+        0.4
+      );
+
 
       noBtn.innerText =
         "hehe nope 😭";
@@ -169,15 +217,18 @@ if (yesBtn && bunny) {
       bunny.animate(
         [
           {
-            transform: "translateY(0)"
+            transform:
+              "translateY(0)"
           },
 
           {
-            transform: "translateY(-8px)"
+            transform:
+              "translateY(-8px)"
           },
 
           {
-            transform: "translateY(0)"
+            transform:
+              "translateY(0)"
           }
 
         ],
@@ -198,15 +249,21 @@ if (yesBtn && bunny) {
 ========================================================= */
 
 const photos =
-  document.querySelectorAll(".polaroid");
+  document.querySelectorAll(
+    ".polaroid"
+  );
 
 
 const photoHint =
-  document.getElementById("photoHint");
+  document.getElementById(
+    "photoHint"
+  );
 
 
 const memoryNext =
-  document.getElementById("memoryNext");
+  document.getElementById(
+    "memoryNext"
+  );
 
 
 let openedPhotos = 0;
@@ -219,7 +276,9 @@ photos.forEach(photo => {
     () => {
 
       if (
-        photo.classList.contains("opened")
+        photo.classList.contains(
+          "opened"
+        )
       ) {
 
         return;
@@ -227,25 +286,41 @@ photos.forEach(photo => {
       }
 
 
-      photo.classList.add("opened");
+      playSound(
+        "camera.mp3",
+        0.45
+      );
+
+
+      photo.classList.add(
+        "opened"
+      );
 
 
       openedPhotos++;
 
 
       const caption =
-        photo.dataset.caption || "";
+        photo.dataset.caption ||
+        "";
 
 
       const modal =
-        document.getElementById("modal");
+        document.getElementById(
+          "modal"
+        );
 
 
       const modalText =
-        document.getElementById("modalText");
+        document.getElementById(
+          "modalText"
+        );
 
 
-      if (modal && modalText) {
+      if (
+        modal &&
+        modalText
+      ) {
 
         modalText.innerText =
           caption;
@@ -267,7 +342,8 @@ photos.forEach(photo => {
 
 
       if (
-        openedPhotos === photos.length
+        openedPhotos ===
+        photos.length
       ) {
 
         if (photoHint) {
@@ -299,18 +375,31 @@ photos.forEach(photo => {
 ========================================================= */
 
 const modal =
-  document.getElementById("modal");
+  document.getElementById(
+    "modal"
+  );
 
 
 const closeModal =
-  document.getElementById("closeModal");
+  document.getElementById(
+    "closeModal"
+  );
 
 
-if (closeModal && modal) {
+if (
+  closeModal &&
+  modal
+) {
 
   closeModal.addEventListener(
     "click",
     () => {
+
+      playSound(
+        "click.mp3",
+        0.35
+      );
+
 
       modal.classList.add(
         "hidden"
@@ -332,6 +421,12 @@ if (modal) {
         event.target === modal
       ) {
 
+        playSound(
+          "click.mp3",
+          0.3
+        );
+
+
         modal.classList.add(
           "hidden"
         );
@@ -349,15 +444,21 @@ if (modal) {
 ========================================================= */
 
 const notes =
-  document.querySelectorAll(".note");
+  document.querySelectorAll(
+    ".note"
+  );
 
 
 const noteCount =
-  document.getElementById("noteCount");
+  document.getElementById(
+    "noteCount"
+  );
 
 
 const notesNext =
-  document.getElementById("notesNext");
+  document.getElementById(
+    "notesNext"
+  );
 
 
 let openedNotes = 0;
@@ -370,7 +471,9 @@ notes.forEach(note => {
     () => {
 
       if (
-        note.classList.contains("opened")
+        note.classList.contains(
+          "opened"
+        )
       ) {
 
         return;
@@ -378,25 +481,41 @@ notes.forEach(note => {
       }
 
 
-      note.classList.add("opened");
+      playSound(
+        "paper.mp3",
+        0.4
+      );
+
+
+      note.classList.add(
+        "opened"
+      );
 
 
       openedNotes++;
 
 
       const message =
-        note.dataset.message || "";
+        note.dataset.message ||
+        "";
 
 
       const modal =
-        document.getElementById("modal");
+        document.getElementById(
+          "modal"
+        );
 
 
       const modalText =
-        document.getElementById("modalText");
+        document.getElementById(
+          "modalText"
+        );
 
 
-      if (modal && modalText) {
+      if (
+        modal &&
+        modalText
+      ) {
 
         modalText.innerText =
           message;
@@ -418,7 +537,8 @@ notes.forEach(note => {
 
 
       if (
-        openedNotes === notes.length
+        openedNotes ===
+        notes.length
       ) {
 
         if (noteCount) {
@@ -450,7 +570,9 @@ notes.forEach(note => {
 ========================================================= */
 
 const plane =
-  document.getElementById("plane");
+  document.getElementById(
+    "plane"
+  );
 
 
 if (plane) {
@@ -551,8 +673,11 @@ const bunnySpeed = 5;
 ========================================================= */
 
 const keys = {
+
   left: false,
+
   right: false
+
 };
 
 
@@ -638,7 +763,9 @@ if (gameArea) {
 function updateBunny() {
 
   if (!gameBunny) {
+
     return;
+
   }
 
 
@@ -687,11 +814,13 @@ function moveBunny(direction) {
 
 
   const gameWidth =
-    gameArea?.clientWidth || 900;
+    gameArea?.clientWidth ||
+    900;
 
 
   const bunnyWidth =
-    gameBunny.offsetWidth || 80;
+    gameBunny.offsetWidth ||
+    80;
 
 
   if (direction === "left") {
@@ -726,7 +855,8 @@ function moveBunny(direction) {
 
 
   if (
-    bunnyPosition > maxPosition
+    bunnyPosition >
+    maxPosition
   ) {
 
     bunnyPosition =
@@ -762,7 +892,14 @@ function jumpBunny() {
   }
 
 
+  playSound(
+    "jump.mp3",
+    0.35
+  );
+
+
   isJumping = true;
+
 
   jumpVelocity =
     jumpPower;
@@ -882,7 +1019,9 @@ function addHoldControl(
 ) {
 
   if (!button) {
+
     return;
+
   }
 
 
@@ -890,6 +1029,12 @@ function addHoldControl(
     event => {
 
       event.preventDefault();
+
+
+      playSound(
+        "click.mp3",
+        0.25
+      );
 
 
       keys[direction] =
@@ -986,6 +1131,7 @@ if (jumpBtn) {
     event => {
 
       event.preventDefault();
+
 
       jumpBunny();
 
@@ -1149,16 +1295,20 @@ function isCollision(
 
 
   return !(
-    a.right - horizontalPadding <
+    a.right -
+      horizontalPadding <
       b.left ||
 
-    a.left + horizontalPadding >
+    a.left +
+      horizontalPadding >
       b.right ||
 
-    a.bottom - verticalPadding <
+    a.bottom -
+      verticalPadding <
       b.top ||
 
-    a.top + verticalPadding >
+    a.top +
+      verticalPadding >
       b.bottom
   );
 
@@ -1207,6 +1357,12 @@ function checkCollisions() {
 
         obstacle.dataset.hit =
           "true";
+
+
+        playSound(
+          "hit.mp3",
+          0.35
+        );
 
 
         loseHeart();
@@ -1260,11 +1416,14 @@ function checkCollisions() {
 function loseHeart() {
 
   if (gameFinished) {
+
     return;
+
   }
 
 
   hearts--;
+
 
   updateHearts();
 
@@ -1349,7 +1508,9 @@ function loseHeart() {
 function updateHearts() {
 
   if (!gameHearts) {
+
     return;
+
   }
 
 
@@ -1391,8 +1552,16 @@ function updateHearts() {
 function winGame() {
 
   if (gameFinished) {
+
     return;
+
   }
+
+
+  playSound(
+    "win.mp3",
+    0.55
+  );
 
 
   gameFinished =
@@ -1526,6 +1695,7 @@ function resetGame() {
 
 }
 
+
 /* =========================================================
    GAME NEXT → GIFT
 ========================================================= */
@@ -1536,9 +1706,16 @@ if (gameNext) {
     "click",
     () => {
 
+      playSound(
+        "click.mp3",
+        0.45
+      );
+
+
       console.log(
         "GAME SELESAI → GIFT"
       );
+
 
       goTo(6);
 
@@ -1569,6 +1746,12 @@ if (giftBtn) {
       );
 
 
+      playSound(
+        "magic.mp3",
+        0.55
+      );
+
+
       /* buka kado */
 
       giftBtn.classList.add(
@@ -1576,7 +1759,7 @@ if (giftBtn) {
       );
 
 
-      /* pindah ke cake */
+      /* pindah ke coffee & bread */
 
       setTimeout(
         () => {
@@ -1596,6 +1779,7 @@ if (giftBtn) {
   );
 
 }
+
 
 /* =========================================================
    MUSIC
@@ -1627,6 +1811,16 @@ if (
     async () => {
 
       /* =========================
+         SOUND BUTTON
+      ========================= */
+
+      playSound(
+        "click.mp3",
+        0.3
+      );
+
+
+      /* =========================
          PAUSE
       ========================= */
 
@@ -1644,6 +1838,7 @@ if (
 
 
       }
+
 
       /* =========================
          PLAY
