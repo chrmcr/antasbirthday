@@ -5,7 +5,7 @@
 function playSound(file, volume = 0.5) {
 
   const sound =
-    new Audio(`sounds/${file}`);
+    new Audio(`music/${file}`);
 
   sound.volume = volume;
 
