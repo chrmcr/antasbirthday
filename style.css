@@ -3115,8 +3115,22 @@ main {
 @media (max-width: 380px) {
 
   .scene {
-    padding-left: 12px;
-    padding-right: 12px;
+  width: 100%;
+  max-width: 100vw;
+
+  height: 100dvh;
+  min-height: 100dvh;
+
+  padding: 55px 16px 25px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  /* PENTING UNTUK HP */
+  align-items: center;
+  justify-content: flex-start;
   }
 
 
